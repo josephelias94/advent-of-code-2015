@@ -14,7 +14,6 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": false,
     "target": "es2022"
   },
   "include": ["*.config.cjs", "*.config.ts", ".eslintrc.cjs", "src"],
