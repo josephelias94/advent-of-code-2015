@@ -1,16 +1,20 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   env: {
+    'jest/globals': true,
     es2022: true,
     node: true,
   },
   extends: [
     // avoid reordering those plugins
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:import/errors',
     'plugin:import/recommended',
+    'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:@typescript-eslint/all',
+    'plugin:jest/all',
     'prettier',
   ],
   ignorePatterns: ['coverage/**', 'html/**'],
@@ -21,7 +25,7 @@ module.exports = {
     project: './tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'jest'],
   root: true,
   rules: {
     'import/no-unresolved': 'error',
@@ -55,6 +59,8 @@ module.exports = {
         memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
       },
     ],
+    'no-magic-numbers': 'off',
+    '@typescript-eslint/no-magic-numbers': 'off',
   },
   settings: {
     'import/resolver': {
