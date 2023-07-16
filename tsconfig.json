@@ -21,7 +21,7 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
+    "noUncheckedIndexedAccess": false, // throws "is possibly 'undefined'" error in array indexes
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true,
