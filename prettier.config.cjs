@@ -7,7 +7,6 @@ module.exports = {
   htmlWhitespaceSensitivity: 'ignore',
   insertPragma: false,
   jsxSingleQuote: false,
-  pluginSearchDirs: false,
   printWidth: 120,
   quoteProps: 'as-needed',
   requirePragma: false,
