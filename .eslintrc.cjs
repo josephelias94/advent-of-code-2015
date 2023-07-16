@@ -61,6 +61,9 @@ module.exports = {
     ],
     'no-magic-numbers': 'off',
     '@typescript-eslint/no-magic-numbers': 'off',
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+    'require-await': 'off',
+    '@typescript-eslint/require-await': 'off',
   },
   settings: {
     'import/resolver': {
