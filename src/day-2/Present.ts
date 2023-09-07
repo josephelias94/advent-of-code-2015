@@ -39,6 +39,16 @@ export default class Present {
     this.calculateWrappingPaperAndRibbon();
   }
 
+  private static getDimensions(dimension: string): Dimensions {
+    const arrayOfNumbers = dimension.split('x').map((element) => Number(element));
+
+    return {
+      length: Number(arrayOfNumbers[0]),
+      width: Number(arrayOfNumbers[1]),
+      height: Number(arrayOfNumbers[2]),
+    };
+  }
+
   public getTotalWrappingPaper(): number {
     return this.paper;
   }
@@ -48,30 +58,18 @@ export default class Present {
   }
 
   private calculateWrappingPaperAndRibbon(): void {
-    Promise.resolve(
+    void Promise.resolve(
       this.dimensions.map(async (dimension) => {
         this.calculate(dimension);
       }),
-    ).finally(() => {
-      console.log('Operation finished');
-    });
+    );
   }
 
   private calculate(dimension: string): void {
-    const dimensions = this.getDimensions(dimension);
+    const dimensions = Present.getDimensions(dimension);
 
     this.calculateDimensions(dimensions.length, dimensions.width, dimensions.height);
     this.calculateRibbon(dimensions.length, dimensions.width, dimensions.height);
-  }
-
-  private getDimensions(dimension: string): Dimensions {
-    const arrayOfNumbers = dimension.split('x').map((element) => Number(element));
-
-    return {
-      length: Number(arrayOfNumbers[0]),
-      width: Number(arrayOfNumbers[1]),
-      height: Number(arrayOfNumbers[2]),
-    };
   }
 
   private calculateDimensions(length: number, width: number, height: number): void {
